@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Workaround",
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/$defs/Data" },
+    { "$ref": "#/$defs/SelfLink" },
+    { "$ref": "#/$defs/CollectionLink"},
+    { "properties": {
+        "links": {
+          "type": "object"
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "Data": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
+        }
+      }
+    },
+    "SelfLink": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "type": "object",
+          "properties": {
+            "self": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "CollectionLink": {
+      "type": "object",
+      "properties": {
+        "links": {
+          "type": "object",
+          "properties": {
+            "collection": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
